@@ -1,0 +1,12 @@
+---
+  - name: "Install WebPackages"
+    yum: 
+      name: httpd
+      state: present
+    notify:
+      - restart httpd
+  - name: "File Copy"
+    copy:
+      src: index.html
+      dest: /usr/share/httpd/noindex/index.html
+
